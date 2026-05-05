@@ -4,7 +4,7 @@ import { AuthController } from "../controllers/AuthController";
 import { authenticate } from "../middleware/auth";
 import { handleInputErrors } from "../middleware/validation";
 
-const router = Router();
+const router: Router = Router();
 
 router.post(
   "/create-account",
@@ -23,7 +23,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.createAccount
+  AuthController.createAccount,
 );
 
 router.post(
@@ -32,7 +32,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.confirmAccount
+  AuthController.confirmAccount,
 );
 
 router.post(
@@ -42,7 +42,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.login
+  AuthController.login,
 );
 
 router.post(
@@ -52,7 +52,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.login
+  AuthController.login,
 );
 
 router.post(
@@ -62,7 +62,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.forgotPassword
+  AuthController.forgotPassword,
 );
 
 router.post(
@@ -72,7 +72,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.validateToken
+  AuthController.validateToken,
 );
 
 router.post(
@@ -93,7 +93,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.updatePasswordWithToken
+  AuthController.updatePasswordWithToken,
 );
 
 router.get("/user", authenticate, AuthController.user);
@@ -109,7 +109,7 @@ router.put(
 
   handleInputErrors,
 
-  AuthController.updateProfile
+  AuthController.updateProfile,
 );
 
 router.post(
@@ -133,7 +133,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.updateCurrentUserPassword
+  AuthController.updateCurrentUserPassword,
 );
 
 router.post(
@@ -143,7 +143,7 @@ router.post(
 
   handleInputErrors,
 
-  AuthController.checkPassword
+  AuthController.checkPassword,
 );
 
 export default router;

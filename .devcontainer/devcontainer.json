@@ -1,0 +1,22 @@
+{
+  "name": "Debian",
+  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+  "features": {
+    "ghcr.io/devcontainers/features/node:2.0.0": {}
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "streetsidesoftware.code-spell-checker-spanish",
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-containers",
+        "kinghat.copypasta"
+      ]
+    }
+  },
+  "forwardPorts": [4000],
+  "mounts": ["source=pnpm-store,target=/pnpm-store,type=volume"],
+  "postCreateCommand": "sudo chown -R $(whoami) /pnpm-store && pnpm config set store-dir /pnpm-store && pnpm i"
+}

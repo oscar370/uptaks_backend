@@ -13,7 +13,7 @@ import {
 } from "../middleware/task";
 import { handleInputErrors } from "../middleware/validation";
 
-const router = Router();
+const router: Router = Router();
 
 router.use(authenticate);
 
@@ -32,7 +32,7 @@ router.post(
 
   handleInputErrors,
 
-  ProjectController.createProject
+  ProjectController.createProject,
 );
 router.get("/", ProjectController.getAllProjects);
 
@@ -42,7 +42,7 @@ router.get(
 
   handleInputErrors,
 
-  ProjectController.getProjectById
+  ProjectController.getProjectById,
 );
 
 router.put(
@@ -61,7 +61,7 @@ router.put(
 
   hasAuthorization,
 
-  ProjectController.updateProject
+  ProjectController.updateProject,
 );
 
 router.delete(
@@ -72,7 +72,7 @@ router.delete(
 
   hasAuthorization,
 
-  ProjectController.deleteProject
+  ProjectController.deleteProject,
 );
 
 /* Routes for Tasks */
@@ -89,7 +89,7 @@ router.post(
 
   handleInputErrors,
 
-  TaskController.createTask
+  TaskController.createTask,
 );
 
 router.get("/:projectId/tasks", TaskController.getProjectTask);
@@ -100,7 +100,7 @@ router.get(
 
   handleInputErrors,
 
-  TaskController.getTaskById
+  TaskController.getTaskById,
 );
 
 router.put(
@@ -115,7 +115,7 @@ router.put(
 
   handleInputErrors,
 
-  TaskController.updateTask
+  TaskController.updateTask,
 );
 
 router.delete(
@@ -127,7 +127,7 @@ router.delete(
 
   handleInputErrors,
 
-  TaskController.deleteTask
+  TaskController.deleteTask,
 );
 
 router.post(
@@ -138,7 +138,7 @@ router.post(
 
   handleInputErrors,
 
-  TaskController.updateStatus
+  TaskController.updateStatus,
 );
 
 // Routes for teams
@@ -148,7 +148,7 @@ router.post(
 
   handleInputErrors,
 
-  TeamMemberController.findMemberByEmail
+  TeamMemberController.findMemberByEmail,
 );
 
 router.get("/:projectId/team", TeamMemberController.getProjectTeam);
@@ -159,7 +159,7 @@ router.post(
 
   handleInputErrors,
 
-  TeamMemberController.addMemberById
+  TeamMemberController.addMemberById,
 );
 
 router.delete(
@@ -168,7 +168,7 @@ router.delete(
 
   handleInputErrors,
 
-  TeamMemberController.removeMemberById
+  TeamMemberController.removeMemberById,
 );
 
 /* Routes for Notes */
@@ -180,13 +180,13 @@ router.post(
 
   handleInputErrors,
 
-  NoteController.createNote
+  NoteController.createNote,
 );
 
 router.get(
   "/:projectId/tasks/:taskId/notes",
 
-  NoteController.getTaskNotes
+  NoteController.getTaskNotes,
 );
 
 router.delete(
@@ -196,7 +196,7 @@ router.delete(
 
   handleInputErrors,
 
-  NoteController.deleteNote
+  NoteController.deleteNote,
 );
 
 export default router;
